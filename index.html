@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -7,99 +6,214 @@
   <title>个人简介网站</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
   <style>
     body {
-      font-family: 'Microsoft YaHei', sans-serif;
-      color: #333;
-      background-color: #2d2d33;
-      text-align:center;
-    }
-    .banner {
-      background-color: rgba(255, 255, 255, 0.5);
-      position: relative;
-      height: 50vh;
-      width: 100%;
-      overflow: hidden;
-    }
-    .banner video {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-    .logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 10%;
-      z-index: 10;
-    }
-    .promo-words {
-      position: absolute;
-      top: 75%;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 35px;
-      z-index: 10;
-    }
-    .profile-container,
-    .program-works {
-      padding: 4rem 0;
-      background-color: #d4d4d1;
-      border-radius: 0.5rem;
-      margin-bottom: 2rem;
-    }
-    .program-works img {
-      border-radius: 0.5rem;
-    }
-    .program-works .carousel-caption {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 1rem;
-      border-radius: 0.5rem;
-      margin-top: 1rem;
-    }
-    .program-works .carousel-inner {
-      position: relative;
-    }
-    .project-selection button {
-      margin-bottom: 1rem;
-      text-align:center;
-
-    }
-    .project-content {
-      display: none;
-    }
-    .project-content.active {
-      display: block;
-      padding: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
-    }
-  .fab{
-    font-size: 2.5vw;;
-    
+  font-family: 'Microsoft YaHei', sans-serif;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+  background-color: #1d1e22;
+  box-shadow: 50vw 20vh 80px 10px #393f4d inset;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+}
+.banner {
+  background-color: rgba(255, 255, 255, 0.963);
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  overflow: hidden;
+}
+.banner video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10%;
+  z-index: 10;
+}
+.promo-words {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 35px;
+  z-index: 10;
+}
+.profile-container {
+  padding: 2rem 0;
+  background-color: #d4d4dc;
+  box-shadow: 20px 20px 50px 10px #d4d4dc inset;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+.program-works {
+  padding: 2rem 0;
+  background-color: #fed96af6;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+.program-works img {
+  border-radius: 0.5rem;
+}
+.program-works .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+.program-works .carousel-inner {
+  position: relative;
+}
+.project-selection button {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.project-content {
+  display: none;
+}
+.project-content.active {
+  display: block;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+.fab {
+  font-size: 2.5vw;
+  ;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin: 10px 0;
+}
+i {
+  margin-right: 10px;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cards__item {
+  display: flex;
+  padding: 1rem;
+  @media(min-width: 40rem) {
+    width: 50%;
   }
-  ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin: 10px 0;
-        }
-
-        i {
-            margin-right: 10px;
-        }
+  @media(min-width: 56rem) {
+    width: 33.3333%;
+  }
+}
+.card {
+  background-color: #e1e2e6;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  &:hover {
+    .card__image {
+      filter: contrast(100%);
+    }
+  }
+}
+.card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+.card__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(.43, .41, .22, .91);
+  ;
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; // 16:9 aspect ratio
+  }
+  @media(min-width: 40rem) {
+    &::before {
+      padding-top: 66.6%; // 3:2 aspect ratio
+    }
+  }
+}
+.card__image--Arduino {
+  background-image: url(./img/Arduino.png);
+}
+.card__image--farmer {
+  background-image: url(./img/au6xj4.png);
+}
+.card__image--green {
+  background-image: url(./img/green.png);
+}
+.card__image--rwd {
+  background-image: url(./img/RWD01.png);
+}
+.card__image--erp {
+  background-image: url(./img/ERP.png);
+}
+.card__image--kali {
+  background-image: url(./img/SQL.png);
+}
+.card__title {
+  color: @gray-dark;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.card__text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 2.5;
+  margin-bottom: 1.25rem;
+}
+.animate__animated.animate__fadeInLeft {
+  --animate-duration: 2s;
+}
+.program-works {
+  opacity: 0;
+  transition: opacity 1s;
+}
+.program-works.in {
+  animation: fadeInLeft;
+  opacity: 1;
+  animation-duration: 2s;
+}
 
   </style>
 </head>
 <body>
-  <div class="banner d-flex justify-content-center align-items-center">
+  <div class="banner d-flex justify-content-center align-items-center animate__fadeInDown">
     <video autoplay loop muted class="position-absolute">
-      <source src="Minecraft_Starry_Night_Wave_Ambience_and_Music_[relax_and_sleep].mp4" type="video/mp4">
+      <source src="video/Minecraft.mp4" type="video/mp4">
     </video>
     <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/a4/Grass_Block_%28item%29_BE5.png/revision/latest?cb=20200901112517" alt="Logo" class="logo img-fluid">
     <p class="promo-words">willy40567's blog</p>
@@ -107,7 +221,7 @@
   <br>
   <br>
   <br>
-  <div class="container profile-container text-center">
+  <div class="container profile-container text-center animate__animated animate__fadeInLeft ">
     <h1>關於我</h1><br>
     <hr style="border: 3px solid rgb(13, 6, 6);width:80%;margin: auto;"><br><br>
     
@@ -145,7 +259,7 @@
               </li>
         </ul>
            
-
+        
           
         </div>
       </div>
@@ -155,92 +269,83 @@
   <div class="container program-works">
     <h2 style="text-align: center;">在學經歷/作品</h2>
     <br><hr style="border: 3px solid rgb(13, 6, 6);width:80%;margin: auto;"><br><br>
-    <div class="project-selection">
-      <button class="btn btn-outline-secondary" onclick="showProjectContent('project1')">作品1</button>
-      <button class="btn btn-outline-secondary" onclick="showProjectContent('project2')">作品2</button>
-      <button class="btn btn-outline-secondary" onclick="showProjectContent('project3')">作品3</button>
-    </div>
-    
-    <!-- 项目1内容 -->
-    <div id="project1" class="project-content">
-      <div class="row">
-        <div class="col-md-4">
-          <h3>介紹都蘭RWD網頁</h3><br>
-          <p style="font-size: 1.3rem;line-height: 1.0;color: #312f2f;letter-spacing:0.3em;line-height: 1.9em">作品介紹:
-            <br>RWD網頁設計的作業<br>以都蘭為主題<br>藉由舒適的RWD設計去博取使用者眼球
+    <div class="cards">
+      <ul class="cards">
+        <li class="cards__item">
+          <div class="card">
+            <div class="card__image card__image--rwd"></div>
+            <div class="card__content">
+              <div class="card__title">介紹都蘭RWD網頁</div>
+              <p class="card__text">
+                <br>RWD網頁設計的作業<br>以都蘭為主題<br>藉由舒適的RWD設計去博取使用者眼球
                         
-            <br>簡潔的設計配合文案去表達都蘭的觀光價值
-             
-            <br>包含商家介紹和地圖
-            </p>
-        </div>
-        <div class="col-md-8">
-          <div id="project1Carousel" class="carousel slide" data-bs-ride="carousel">
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="108216845_p0_master1200.jpg" class="d-block w-100" alt="项目1图片1">
-              </div>
-              <div class="carousel-item">
-                <img src="XXXX.png" class="d-block w-100" alt="项目1图片2">
-              </div>
-              <!-- 可以根据需要添加更多图片 -->
+                <br>簡潔的設計配合文案去表達都蘭的觀光價值
+                 
+                <br>包含商家介紹和地圖 </p>
+                <br>使用程式語言:<i class="fab fa-html5" style="padding: 0.15em 0px 0.15em 0.6vw"></i><i class="fab fa-css3" style="padding:0px 0px 0.15em 0.6vw"></i><i class="fab fa-js" style="padding:0px 0px 0.15em 0.6vw"></i><br/>
+                <button class="btn btn--block card__btn">Button</button>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- 项目2内容 -->
-    <div id="project2" class="project-content">
-      <div class="row">
-        <div class="col-md-4">
-          <h3>项目2</h3>
-          <p>项目2的简介...</p>
-        </div>
-        <div class="col-md-8">
-          <div id="project2Carousel" class="carousel slide" data-bs-ride="carousel">
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="img3.jpg" class="d-block w-100" alt="项目2图片1">
-              </div>
-              <div class="carousel-item">
-                <img src="img4.jpg" class="d-block w-100" alt="项目2图片2">
-              </div>
-              <!-- 可以根据需要添加更多图片 -->
+        </li>
+        <li class="cards__item">
+          <div class="card">
+            <div class="card__image card__image--farmer"></div>
+            <div class="card__content">
+              <div class="card__title">高等深根計畫</div><br>
+              <p class="card__text">幫助鄉村農民建立起網路銷售平台，<br>包含銷售，宣傳推銷等部分，<br>並且專案主題要符合SDGS 12 永續消費生產模式</p>
+              <br>使用程式語言:<i class="fab fa-html5" style="padding: 0.15em 0px 0.15em 0.6vw"></i><i class="fab fa-css3" style="padding:0px 0px 0.15em 0.6vw"></i><i class="fab fa-js" style="padding:0px 0px 0.15em 0.6vw"></i><i class="fab fa-php" style="padding:0px 0px 0.15em 0.6vw"></i><br/>
+              
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 项目3内容 -->
-    <div id="project3" class="project-content">
-      <div class="row">
-        <div class="col-md-4">
-          <h3>项目3</h3>
-          <p>项目3的简介...</p>
-        </div>
-        <div class="col-md-8">
-          <div id="project3Carousel" class="carousel slide" data-bs-ride="carousel">
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="img5.jpg" class="d-block w-100" alt="项目3图片1">
-              </div>
-              <div class="carousel-item">
-                <img src="img6.jpg" class="d-block w-100" alt="项目3图片2">
-              </div>
-              <!-- 可以根据需要添加更多图片 -->
+        </li>
+        <li class="cards__item">
+          <div class="card">
+            <div class="card__image card__image--green"></div>
+            <div class="card__content">
+              <div class="card__title">爬蟲技術全球暖化資訊整合蒐集網站</div><br>
+              <p class="card__text">臺東資管112級資訊管理專題<br>統整散佈在網路上的片面資訊，做一個整合的網站<br>專案主題要符合SDGS永續消費目的，<br>因此採用了全球暖化環保為議題去進行技術撰寫。</p>
+              使用程式語言:<i class="fab fa-html5" style="padding: 0.15em 0px 0.15em 0.6vw"></i><i class="fab fa-css3" style="padding:0px 0px 0.15em 0.6vw"></i><i class="fab fa-js" style="padding:0px 0px 0.15em 0.6vw"></i><i class="fab fa-php" style="padding:0px 0px 0.15em 0.6vw"></i><i class="fa-solid fa-spider" style="padding:0px 0px 0.15em 0.6vw"></i>
+              <i class="fa-solid fa-database" style="padding:0px 0px 0.15em 0.6vw"></i><br/>
             </div>
           </div>
-        </div>
-      </div>
+        </li>
+        <li class="cards__item">
+          <div class="card">
+            <div class="card__image card__image--Arduino"></div>
+            <div class="card__content">
+              <div class="card__title">Arduino環境監測</div>
+              <p class="card__text">使用Arduino去監控植物狀態，Arduino感測器可實時監測土壤溫度和水質含量，並使用PHP則將這些數據呈現在網頁上。透過ArduinoIDE的編程。</p>
+              使用程式語言:<i class="fab fa-html5" style="padding: 0.15em 0px 0.15em 0.6vw"></i><i class="fab fa-css3" style="padding:0px 0px 0.15em 0.6vw"></i><img src="https://static-00.iconduck.com/assets.00/arduino-icon-512x242-1wzbyvcu.png" style="width:3.8vw;height:3.8vh;display:block; margin:auto;"></img><i class="fab fa-php" style="padding:0.1em 0px 0.15em 0.6vw"></i><br/>
+            </div>
+          </div>
+        </li>
+        <li class="cards__item">
+            <div class="card">
+              <div class="card__image card__image--erp"></div>
+              <div class="card__content">
+                <div class="card__title">ERP接觸測試</div>
+                <p class="card__text">透過老師提供的專案，使用WEBERP<br>模擬出虛擬公司的報價程序<br>以及管理業務軟體的使用體驗<br>並針對不同體量公司所需要具備的ERP進行分析</p>
+                使用軟體:<img src="https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/a2a36a74-55e4-43c7-8d3c-d4d5f72e10fb.png?auto=format,compress&size=150" style="width:4vw;height:auto;display:block; margin:auto;"></img>
+              </div>
+            </div>
+          </li>
+          <li class="cards__item">
+            <div class="card">
+              <div class="card__image card__image--kali"></div>
+              <div class="card__content">
+                <div class="card__title">網路攻防</div>
+                <p class="card__text"> 自製PYTHON程序和KALI暴力破解學校弱點，<br>以及掃全校IP找學校弱點。</p>
+                使用軟體:<img src="https://www.svgrepo.com/show/330767/kalilinux.svg" style="width:4vw;height:auto;display:block; margin:auto;"></img><i class="fab fa-python" style="padding:0px 0px 0.15em 0.6vw"></i>
+              </div>
+            </div>
+          </li>
+         
+      </ul>
     </div>
   </div>
 <br>
-  <footer class="footer_contect"">
+<div>
+  <footer class="footer_contect" >
     <p class="title"style="color:white;">聯絡方式<a>CONTACT METHOD</a></p>
     <div class="contect">
       <ul style="color: #ddd;">
@@ -256,6 +361,8 @@
         </div>
     </div>
   </footer>
+</div>
+
 
   <script>
     function showProjectContent(projectId) {
@@ -266,9 +373,19 @@
       const activeContent = document.getElementById(projectId);
       activeContent.classList.add('active');
     }
+
+    function isElementInViewport(el) {const rect = el.getBoundingClientRect();return rect.bottom < 0 || rect.top > window.innerHeight;}
+
+    function addClassToVisibleElements(){
+      var aosElements = document.querySelectorAll(".program-works");aosElements.forEach(function (aosElement) {if (!isElementInViewport(aosElement)) aosElement.classList.add("in");else aosElement.classList.remove("in");});
+}
+
+document.addEventListener("scroll", addClassToVisibleElements);
+addClassToVisibleElements();
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  
   
 </body>
 </html>
